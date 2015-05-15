@@ -16,5 +16,5 @@ Icon=/opt/eclipse/icon.xpm
 Comment=Integrated Development Environment
 NoDisplay=false
 Categories=Development;IDE
-Name[en]=eclipse.desktop
+Name[en]=eclipse
 EOF

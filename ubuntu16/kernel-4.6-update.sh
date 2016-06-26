@@ -10,14 +10,14 @@ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.6.2-yakkety/linux-image-4.
 
 sudo dpkg -i *.deb
 
-systemctl stop docker
+sudo systemctl stop docker
  
 CONFIGURATION_FILE=$(systemctl show --property=FragmentPath docker | cut -f2 -d=)
-cp $CONFIGURATION_FILE /etc/systemd/system/docker.service
+sudo cp $CONFIGURATION_FILE /etc/systemd/system/docker.service
  
-perl -pi -e 's/^(ExecStart=.+)$/$1 -s overlay/' /etc/systemd/system/docker.service
+sudo perl -pi -e 's/^(ExecStart=.+)$/$1 -s overlay/' /etc/systemd/system/docker.service
  
-systemctl daemon-reload
-systemctl start docker
+sudo systemctl daemon-reload
+sudo systemctl start docker
 
 echo "reboot machine now"
